@@ -9,7 +9,13 @@ public class AccountRegister {
         accounts.add(account);
     }
 
-    public void getAccounts() {
-
+    public void printAccounts() {
+        if (accounts.size() > 0){
+            for (Account account : accounts) {
+                System.out.println("Account owner: " + account.getAccountHolder() + "Balance: " + account.getBalance());
+            }
+        } else {
+            System.out.println("No registered accounts available.");
+        }
     }
 }
