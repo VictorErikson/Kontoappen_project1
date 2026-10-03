@@ -26,6 +26,6 @@ public class Account {
 
     public String deposit(int amount){
         balance = balance + amount;
-        return "Deposit secceeded, current balance is: " + balance;
+        return "Deposit succeeded, current balance is: " + balance;
     }
 }

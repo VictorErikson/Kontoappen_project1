@@ -18,4 +18,13 @@ public class AccountRegister {
             System.out.println("No registered accounts available.");
         }
     }
+
+    public Account findAccount(String name) {
+        for(Account account: accounts) {
+            if (account.getAccountHolder().equals(name)) {
+                return account;
+            }
+        }
+        return null;
+    }
 }
