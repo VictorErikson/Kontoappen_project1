@@ -4,9 +4,16 @@ import java.util.List;
 public class AccountRegister {
     private List<Account> accounts = new ArrayList<>();
 
-    public void createAccount(String name, int startBalance){
+    public Account createAccount(String name, int startBalance){
         Account account = new Account(name, startBalance);
         accounts.add(account);
+        return account;
+    }
+
+    public SavingsAccount createSavingsAccount(String name, int startBalance, double interestRate){
+        SavingsAccount savingsAccount = new SavingsAccount(name, startBalance, interestRate);
+        accounts.add(savingsAccount);
+        return savingsAccount;
     }
 
     public void printAccounts() {

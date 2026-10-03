@@ -24,8 +24,12 @@ public class Account {
         }
     }
 
-    public String deposit(int amount){
+    public String deposit(double amount){
         balance = balance + amount;
         return "Deposit succeeded, current balance is: " + balance;
+    }
+
+    public void printInfo(){
+        System.out.println("Account owner: " + accountHolder + ", Balance: " + balance);
     }
 }
