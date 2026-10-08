@@ -19,8 +19,8 @@ public class Account {
         return accountHolder;
     }
 
-    public String getCode(){
-        return code;
+    public boolean checkCode(String enteredCode){
+        return code.equals(enteredCode);
     }
 
     public double getBalance(){
@@ -54,6 +54,9 @@ public class Account {
     }
 
     public String deposit(double amount){
+        if(amount <= 0){
+            return "Deposit denied: amount must be greater than 0.";
+        }
         addToBalance(amount);
         addTransactionhistory("Deposit of " + amount + "$, current balance is: " + balance + "$");
         return "Deposit succeeded, current balance is: " + balance;

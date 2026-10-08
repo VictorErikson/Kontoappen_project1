@@ -14,9 +14,9 @@ Konton skapas med `createAccount` och `createSavingsAccount` i `AccountRegister`
 
 1. Vid inloggningen skriver användaren in namn och kod. `Menu.showLoginMenu` anropar `accountRegister.findAccount(name)`, som söker i registrets lista och returnerar rätt `Account` (eller `SavingsAccount`). Menyn jämför koden och sparar kontot i `loggedinAccount`.
 2. Användaren väljer `3: Deposit` i kontomenyn och skriver in ett belopp, t.ex. `500`.
-3. `Menu.showAccountMenu` läser in beloppet med `Scanner` och kontrollerar att det är större än 0 (annars frågar den igen).
+3. `Menu.showAccountMenu` läser in beloppet med `Scanner`.
 4. Menyn anropar `loggedinAccount.deposit(amount)`, eftersom kontot redan hämtades från registret vid inloggningen (och sparades i `loggedinAccount`) så behöver vi inte söka efter det igen.
-5. I `Account.deposit` anropas `addToBalance(amount)` som ökar saldot, sedan sparas raden "Deposit of 500.0$, current balance is: ..." i `transactionHistory`.
+5. `Account.deposit` kontrollerar först att beloppet är större än 0 (annars returneras "Deposit denied: amount must be greater than 0." och saldot lämnas orört). Sedan anropas `addToBalance(amount)` som ökar saldot, sedan sparas raden "Deposit of 500.0$, current balance is: ..." i `transactionHistory`.
 6. Metoden returnerar texten "Deposit succeeded, current balance is: ..." som `Menu` skriver ut med `System.out.println`.
 
 ## Reflektion

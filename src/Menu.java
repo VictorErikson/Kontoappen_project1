@@ -84,7 +84,7 @@ public class Menu {
                 String enteredCode = scanner.nextLine();
                 Account account = accountRegister.findAccount(enteredName);
 
-                if (account != null && account.getCode().equals(enteredCode)) {
+                if (account != null && account.checkCode(enteredCode)) {
                     loggedinAccount = account;
                     return loggedinAccount;
                 } else {
@@ -136,13 +136,6 @@ public class Menu {
                 System.out.println("Amount: ");
                 int amount = scanner.nextInt();
                 scanner.nextLine();
-
-                while (amount <= 0) {
-                    System.out.println("Amount not valid, please try again: ");
-                    amount = scanner.nextInt();
-                    scanner.nextLine();
-                }
-
                 System.out.println(loggedinAccount.deposit(amount));
             } else if (menuOption == 4) {
                 System.out.println("Amount: ");
