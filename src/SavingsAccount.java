@@ -1,5 +1,4 @@
 public class SavingsAccount extends Account{
-    // private double interest = 0.02;
     private int interestRate;
 
     public SavingsAccount(String accountHolder, int startBalance, String code, int interestRate) {
@@ -24,22 +23,4 @@ public class SavingsAccount extends Account{
     public String getType() {
         return "Savings";
     }
-    /*
-    public void depositSavings (int amount){
-        savingsBalance = savingsBalance + amount
-    }
-
-    public double getSavingsBalance(){
-        return savingsBalance;
-    }
-
-    public boolean transferFromSavings (int amount){
-        if (amount <= savingsBalance){
-            savingsBalance = savingsBalance + amount;
-            return true;
-        } else {
-            return false;
-        }
-    }
-    */
 }
